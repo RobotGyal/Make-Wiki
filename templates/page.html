@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
-<h1>{{all_content}}</h1>
 
+{% block content %}
+<h1>Current Wiki Pages Available!</h1>
+
+<br><br>
 {%for item in all_content%}
-    <h2>Title: {{item.title}}</h2>
+<br><br>
+    <h2><a href='{{item.slug}}'>Title: {{item.title}}</a></h2>
     <h2>Author: {{item.author}}</h2>
-    <h3>Slug: {{item.slug}}</h3>
-    <span>{{item.content}}</span>
+    <hr> 
+    <h4>{{item.slug}}</h4>
 {% endfor %}
+
+{% endblock%}
+

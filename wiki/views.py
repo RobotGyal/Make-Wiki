@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Page
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.http import HttpResponse
+
 
 class PageList(ListView):
     """
@@ -42,7 +44,7 @@ class PageDetailView(DetailView):
     def get(self, request, slug):
         """ Returns a specific of wiki page by slug. """
         page = Page.objects.get(slug=slug)
-        return(render(request, 'wiki/page.html', { 'page': page}))
+        return(render(request, 'page_detail.html', {'page':page}))
 
 
     def post(self, request, slug):

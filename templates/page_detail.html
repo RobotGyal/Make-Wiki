@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Current Wiki Details!</h1>
+
+<br><br>
+    <h2>Title: {{page.title}}</h2>
+    <h2>Author: {{page.author}}</h2>
+    <hr> 
+    <h4>{{page.content}}</h4>
+
+{% endblock%}
